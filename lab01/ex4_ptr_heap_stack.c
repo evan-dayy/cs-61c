@@ -6,15 +6,17 @@ int* int_on_stack() {
   int x = 5;
 
   // Returns a pointer that points to the number 5
-  return &x;
+  int* p = &x;
+  printf("%d\n", *p);
+  return p;
 }
 
 int* int_on_heap() {
   // TODO: allocate memory on the heap for an integer
-  ______ ptr_to_5 = ______;
+  int *ptr_to_5 = (int *) malloc(sizeof(int32_t));
 
   // TODO: store the number 5 in memory you just allocated
-  ______ = 5;
+  *ptr_to_5 = 5;
 
   // Returns a pointer that points to the number 5
   return ptr_to_5;
@@ -24,8 +26,8 @@ int main() {
   int* ptr_to_stack = int_on_stack();
   int* ptr_to_heap = int_on_heap();
 
-  printf("ptr_to_stack is the address %p\n", ptr_to_stack);
-  printf("ptr_to_heap is the address %p\n", ptr_to_heap);
+  printf("ptr_to_stack is the address %p, %d\n", ptr_to_stack, *ptr_to_stack);
+  printf("ptr_to_heap is the address %p, %d\n", ptr_to_heap, *ptr_to_heap);
 
   return 0;
 }
