@@ -21,6 +21,9 @@ int main(void) {
     int *p = A;
     printf("A: %p, &A: %p\n", A, &A);
     printf("p: %p, &p: %p\n", p, &p);
+    printf("%d\n", *A);
+    printf("%d\n", p[2]);
+    printf("%d", 'a' - 'a');
 
 }
 
